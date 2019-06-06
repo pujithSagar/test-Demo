@@ -8,7 +8,7 @@ http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/htt
 		<http:listener-connection host="0.0.0.0" port="8081" />
 	</http:listener-config>
 	<flow name="test-demoFlow" doc:id="1eaae56c-33ac-49da-ba1c-d18cf81d3f07" >
-		<http:listener doc:name="Listener" doc:id="a6396e3d-2a11-4fe8-9d9b-937ee1bd3dbb" config-ref="HTTP_Listener_config" path="/"/>
+		<http:listener doc:name="Listener" doc:id="a6396e3d-2a11-4fe8-9d9b-937ee1bd3dbb" config-ref="HTTP_Listener_config" path="/testDemo"/>
 		<set-payload value="Hello Cap1" doc:name="Set Payload" doc:id="61d1472e-eab1-4c36-90d1-769781808bcf" />
 	</flow>
 </mule>
