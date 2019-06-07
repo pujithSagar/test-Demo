@@ -5,10 +5,11 @@
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
 http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
 	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="8c29ac1a-d752-4425-909c-cf96555370f2" >
-		<http:listener-connection host="0.0.0.0" port="8081" />
+		<http:listener-connection host="0.0.0.0" port="${http.port}" />
 	</http:listener-config>
+	<global-property doc:name="Global Property" doc:id="7b114a64-6bf3-4810-967e-54f0746099ac" name="http.port" value="8081" />
 	<flow name="test-demoFlow" doc:id="1eaae56c-33ac-49da-ba1c-d18cf81d3f07" >
 		<http:listener doc:name="Listener" doc:id="a6396e3d-2a11-4fe8-9d9b-937ee1bd3dbb" config-ref="HTTP_Listener_config" path="/testDemo"/>
-		<set-payload value="Hello Cap1" doc:name="Set Payload" doc:id="61d1472e-eab1-4c36-90d1-769781808bcf" />
+		<set-payload value="Hello Captain America!!" doc:name="Set Payload" doc:id="61d1472e-eab1-4c36-90d1-769781808bcf" />
 	</flow>
 </mule>

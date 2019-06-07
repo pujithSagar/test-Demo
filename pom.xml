@@ -3,32 +3,32 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.mycompany</groupId>
-	<artifactId>test-demo</artifactId>
+	<artifactId>test-demo-apisero</artifactId>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>mule-application</packaging>
-
-	<name>test-demo</name>
+	<name>Mule_test-demo-apisero_Application</name>
 
     <properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-
 		<app.runtime>4.1.5</app.runtime>
 		<mule.maven.plugin.version>3.2.7</mule.maven.plugin.version>
-	<munit.version>2.1.5</munit.version>
+		<mule.maven.app.plugin.version>1.8</mule.maven.app.plugin.version>
+		<munit.version>2.1.5</munit.version>
     </properties>
 
 	<build>
 		<plugins>
 			<plugin>
 				<groupId>org.mule.tools.maven</groupId>
-				<artifactId>mule-maven-plugin</artifactId>
-				<version>${mule.maven.plugin.version}</version>
+				<artifactId>mule-app-maven-plugin</artifactId>
+				<version>${mule.maven.app.plugin.version}</version>
 				<extensions>true</extensions>
 				<configuration>
+					<copyToAppsDirectory>true</copyToAppsDirectory>
 				</configuration>
 			</plugin>
-		<plugin>
+			<plugin>
                 <groupId>com.mulesoft.munit.tools</groupId>
                 <artifactId>munit-maven-plugin</artifactId>
                 <version>${munit.version}</version>
@@ -51,6 +51,26 @@
                     </coverage>
                 </configuration>
             </plugin>
+            
+            <plugin>
+				<groupId>org.mule.tools.maven</groupId>
+				<artifactId>mule-maven-plugin</artifactId>
+				<version>${mule.maven.plugin.version}</version>
+				<extensions>true</extensions>
+				<configuration>
+			        <cloudHubDeployment>
+			            <uri>https://anypoint.mulesoft.com</uri>
+			            <muleVersion>${app.runtime}</muleVersion>
+			            <username>apiTest1351</username>
+			            <password>Fall@2015</password>
+			            <applicationName>test-demo-apisero</applicationName>
+			            <environment>Sandbox</environment>
+			            <properties>
+			                <key>value</key>
+			            </properties>
+			        </cloudHubDeployment>
+   				</configuration>
+			</plugin>		
         </plugins>
 	</build>
 
