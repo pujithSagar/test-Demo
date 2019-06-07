@@ -13,7 +13,7 @@
 			<flow-ref doc:name="Flow-ref to test-demoFlow" doc:id="2a58fd76-7919-40d5-a406-e632666d322c" name="test-demoFlow"/>
 		</munit:execution>
 		<munit:validation >
-			<munit-tools:assert-that doc:name="Assert that EQUALS" doc:id="aa72ae92-dbd5-4c72-9dc3-aaff2d9df3e8" expression="#[payload]" is='#[MunitTools::equalTo("Hello Captain America!!")]'/>
+			<munit-tools:assert-that doc:name="Assert that EQUALS to Payload" doc:id="aa72ae92-dbd5-4c72-9dc3-aaff2d9df3e8" expression="#[payload]" is='#[MunitTools::equalTo("Hello Captain America!!")]'/>
 		</munit:validation>
 	</munit:test>
 
